@@ -18,3 +18,6 @@ react-native start
 ```bash
 react-native run-andoird
 ```
+
+## SCREENSHOOTS
+![screenshots](screen_shots/Screenshot_1477898670.png)
