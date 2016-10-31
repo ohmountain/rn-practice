@@ -67,6 +67,7 @@ class GeneralComponent extends Component {
 					marginLeft: this.state.suffixMarginLeft
 				}}></View>
 			</View>
+		
 			<ViewPagerAndroid
 					ref="view_pager"
 					style={ style.contentContainer }
@@ -86,7 +87,8 @@ export default GeneralComponent;
 
 const style = StyleSheet.create({
 	container: {
-		flex: 1
+		flex: 1,
+		flexDirection: 'column'
 	},
 
 	itemsContainer: {
