@@ -53,7 +53,7 @@ class DataRowComponent extends Component {
 				<View style={ style.rowContent } >
 					<Text 
 						numberOfLines={2}
-						style={ this.state.visited ? { fontSize: 16, color: '#999' } : { fontSize: 16, color: '#696969' } }>{ this.props.content }</Text>
+						style={ this.state.visited ? { fontSize: 14, color: '#999' } : { fontSize: 14, color: '#696969' } }>{ this.props.content }</Text>
 				</View>
 				<View style={ style.rowInfo }>
 					<Text style={ style.rowInfoTime }>刚刚</Text>
@@ -115,17 +115,7 @@ const style = StyleSheet.create({
 		marginBottom: 4,
 	},
 
-	rowTitleText: {
-		fontSize: 16,
-		color: '#333'
-	},
-
 	rowContent: {
-	},
-	
-	rowContentText: {
-		height: 32,
-		color: '#696969'
 	},
 
 	rowInfo: {
