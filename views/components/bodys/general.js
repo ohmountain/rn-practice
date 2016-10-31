@@ -92,12 +92,12 @@ const style = StyleSheet.create({
 	},
 
 	itemsContainer: {
-		height: 26,
+		height: 32,
 		backgroundColor: '#FFFFFF'
 	},
 
 	itemsWrapper: {
-		height: 25,
+		height: 31,
 		flexDirection: 'row',
 		justifyContent: 'center',
 		alignItems: 'center'

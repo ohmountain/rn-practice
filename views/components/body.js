@@ -1,27 +1,44 @@
 import React,{ Component } from 'react';
 import {
 	StyleSheet,
+	Animated,
 	View,
 	Text,
 	Dimensions,
 	PixelRatio,
-	ViewPagerAndroid
+	ViewPagerAndroid,
 } from 'react-native';
 
 import { Components } from './bodys/index';
 
 class BodyComponent extends Component {
 
+	constructor(props) {
+		super(props);
+
+		this.state = {
+			marginLeft: -  (Dimensions.get('window').width * props.activeMenu),
+		};
+	}
+
 	componentWillReceiveProps(props) {
+		this.setState({
+			marginLeft: -  (Dimensions.get('window').width * props.activeMenu)
+		});
 	}
 
 	render() {
-		return (<View style={ [style.bodyContainer, {marginLeft: - (Dimensions.get('window').width * this.props.activeMenu) }] }>
+
+		return (<Animated.View
+							style={[
+								style.bodyContainer,
+								{marginLeft: this.state.marginLeft}
+							]}>
 						<View style={{ width: Dimensions.get('window').width  }}>{ Components[0] }</View>
 						<View style={{ width: Dimensions.get('window').width  }}>{ Components[1] }</View>
 						<View style={{ width: Dimensions.get('window').width  }}>{ Components[2] }</View>
 						<View style={{ width: Dimensions.get('window').width  }}>{ Components[3] }</View>
-					</View>);
+					</Animated.View>);
 	}
 }
 
