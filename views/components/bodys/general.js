@@ -26,7 +26,6 @@ class GeneralComponent extends Component {
 	onPageSelected(event) {
 		this.setState({
 			generalPos: event.nativeEvent.position,
-			//suffixMarginLeft:  event.nativeEvent.position * (Dimensions.get('window').width / 4),
 		});
 	}
 

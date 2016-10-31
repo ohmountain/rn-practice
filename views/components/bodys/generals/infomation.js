@@ -3,7 +3,8 @@ import {
 	View,
 	Text,
 	StyleSheet,
-	ListView
+	ListView,
+	TouchableHighlight
 } from 'react-native';
 
 import FIcon from 'react-native-vector-icons/FontAwesome';
@@ -16,25 +17,43 @@ var d = {
 
 var data = [];
 
+var title = '队长别开枪是我';
+
 for (var i=1; i<100; i++) {
-	var _d = d;
+	var _d = Object.assign({}, d);
+	title = title + '啊';
+	_d.title = title + title;
 	_d.id = i;
 	_d.read = i;
 	data.push(_d);
 }
 
 class DataRowComponent extends Component {
+
+	constructor(props) {
+		super(props);
+		this.state = {
+			visited: false
+		}
+	}
+
+	setVisited() {
+		this.setState({
+			visited: true
+		});
+	}
+
 	render() {
-		return (<View style={ style.rowContainer }>
+		return (<TouchableHighlight onPress={ this.setVisited.bind(this) } underlayColor='#FFFFFF'><View style={ style.rowContainer }>
 				<View style={ style.rowTitle }>
 					<Text 
 						numberOfLines={2}
-						style={ style.rowTitleText }>{ this.props.title }</Text>
+						style={ this.state.visited ? { fontSize: 16, color: '#939393' } : { fontSize: 16, color: '#454545' } }>{ this.props.title }</Text>
 				</View>
 				<View style={ style.rowContent } >
 					<Text 
 						numberOfLines={2}
-						style={ style.rowContentText }>{ this.props.content }</Text>
+						style={ this.state.visited ? { fontSize: 16, color: '#999' } : { fontSize: 16, color: '#696969' } }>{ this.props.content }</Text>
 				</View>
 				<View style={ style.rowInfo }>
 					<Text style={ style.rowInfoTime }>刚刚</Text>
@@ -42,7 +61,7 @@ class DataRowComponent extends Component {
 						<FIcon name='bookmark-o' size={12}/> { this.props.read }
 					</Text>
 				</View>
-		</View>)
+		</View></TouchableHighlight>)
 	}
 }
 
@@ -92,7 +111,6 @@ const style = StyleSheet.create({
 	},
 
 	rowTitle: {
-		height: 20,
 		justifyContent: 'center',
 		marginBottom: 4,
 	},
