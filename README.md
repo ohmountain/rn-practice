@@ -20,4 +20,4 @@ react-native run-andoird
 ```
 
 ## SCREENSHOOTS
-![screenshots](https://github.com/renshan1990/rn-practice/blob/master/screenshots/Screenshot_1477898670.png =480x270)
+<img src='https://github.com/renshan1990/rn-practice/blob/master/screenshots/Screenshot_1477898670.png' height='480' width='270'/>
