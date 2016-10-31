@@ -3,11 +3,13 @@ React Native In Practice
 
 ## HOW TO
 
-1. INSTALL
+### INSTALL
+
 ```bash
 npm install
 ```
-2. RUN
+
+### RUN
 
 ```bash
 react-native start
