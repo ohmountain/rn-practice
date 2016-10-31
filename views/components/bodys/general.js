@@ -4,6 +4,7 @@ import {
 	Text,
 	StyleSheet,
 	Dimensions,
+	TouchableHighlight,
 	ViewPagerAndroid,
 } from 'react-native';
 
@@ -38,15 +39,27 @@ class GeneralComponent extends Component {
 		});
 	}
 
+	setPage(page) {
+		this.refs.view_pager.setPage(page);
+	}
+
 	render() {
 
 		return <View style={ style.container }>
 			<View style={ style.itemsContainer }>
 				<View style={style.itemsWrapper}>
-					<View style={ style.itemWrapper }><Text style={ this.state.generalPos==0 ? {color: '#00AA66'} : {} } >资讯</Text></View>
-					<View style={ style.itemWrapper }><Text style={ this.state.generalPos==1 ? {color: '#00AA66'} : {} } >博客</Text></View>
-					<View style={ style.itemWrapper }><Text style={ this.state.generalPos==2 ? {color: '#00AA66'} : {} } >问答</Text></View>
-					<View style={ style.itemWrapper }><Text style={ this.state.generalPos==3 ? {color: '#00AA66'} : {} } >活动</Text></View>
+					<TouchableHighlight onPress={ () => {this.setPage(0)} } style={ style.itemWrapper } underlayColor='#FFF'>
+						<Text style={ this.state.generalPos==0 ? {color: '#00AA66'} : {} } >资讯</Text>
+					</TouchableHighlight>
+					<TouchableHighlight onPress={ () => {this.setPage(1)} } style={ style.itemWrapper } underlayColor='#FFF'>
+						<Text style={ this.state.generalPos==0 ? {color: '#00AA66'} : {} } >博客</Text>
+					</TouchableHighlight>
+					<TouchableHighlight onPress={ () => {this.setPage(2)} } style={ style.itemWrapper } underlayColor='#FFF'>
+						<Text style={ this.state.generalPos==0 ? {color: '#00AA66'} : {} } >问答</Text>
+					</TouchableHighlight>
+					<TouchableHighlight onPress={ () => {this.setPage(3)} } style={ style.itemWrapper } underlayColor='#FFF'>
+						<Text style={ this.state.generalPos==0 ? {color: '#00AA66'} : {} } >活动</Text>
+					</TouchableHighlight>
 				</View>
 				<View style={{
 					flex: 1,
@@ -56,8 +69,9 @@ class GeneralComponent extends Component {
 				}}></View>
 			</View>
 			<ViewPagerAndroid
+					ref="view_pager"
 					style={ style.contentContainer }
-					setPage={1}
+					initialPage={0}
 					onPageSelected={ this.onPageSelected.bind(this) }
 					onPageScroll={ this.onPageScroll.bind(this) }>
 					<InfomationComponent />
@@ -78,6 +92,7 @@ const style = StyleSheet.create({
 
 	itemsContainer: {
 		height: 26,
+		backgroundColor: '#FFFFFF'
 	},
 
 	itemsWrapper: {

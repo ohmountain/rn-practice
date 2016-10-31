@@ -39,8 +39,8 @@ class MenuItem extends Component {
 				activeOpacity={1}
 				underlayColor="#FFFFFF">
 				<View style={ style.menuItem }>
-					<FIcon name={ this.props.icon } size={ 18 } color={ this.props.active === true ? "#00AA66" : "#333333" }/>
-					<Text style={ { fontSize: 12, color : this.props.active === true ? "#00AA66" : "#333333" } }>{ this.props.title }</Text>
+					<FIcon name={ this.props.icon } size={ 18 } color={ this.props.active === true ? "#00AA66" : "#666666" }/>
+					<Text style={ { fontSize: 12, color : this.props.active === true ? "#00AA66" : "#666666" } }>{ this.props.title }</Text>
 				</View>
 			</TouchableHighlight>);
 	}

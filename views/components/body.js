@@ -20,6 +20,7 @@ class BodyComponent extends Component {
 const style = StyleSheet.create({
 	bodyContainer: {
 		flex: 1,
+		backgroundColor: '#F9F9F9'
 	}
 });
 
