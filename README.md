@@ -20,4 +20,4 @@ react-native run-andoird
 ```
 
 ## SCREENSHOOTS
-![screenshots](/screen_shots/Screenshot_1477898670.png)
+![screenshots](https://github.com/renshan1990/rn-practice/blob/master/screenshots/Screenshot_1477898670.png)
