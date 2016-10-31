@@ -100,7 +100,6 @@ const style = StyleSheet.create({
 
 	contentContainer: {
 		flex: 1,
-		backgroundColor: '#EEE',
 	},
 
 });
