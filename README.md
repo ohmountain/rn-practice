@@ -9,8 +9,6 @@ React Native In Practice
 npm install
 ```
 
-------
-
 > RUN
 
 ```bash
